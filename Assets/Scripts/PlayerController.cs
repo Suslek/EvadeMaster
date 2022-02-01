@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private GameManager gameManager;
     private bool isPowerUp;
-    [SerializeField] private GameObject powerUpIndicator;
+//    [SerializeField] private GameObject powerUpIndicator;
 
     private void Start()
     {
@@ -73,14 +73,14 @@ public class PlayerController : MonoBehaviour
             isPowerUp = true;
             StopCoroutine(PowerUpCoolDown());
             StartCoroutine(PowerUpCoolDown());
-            powerUpIndicator.SetActive(true);
+//            powerUpIndicator.SetActive(true);
         }
     }
 
     IEnumerator PowerUpCoolDown()
     {
         yield return new WaitForSeconds(3);
-        powerUpIndicator.SetActive(false);
+//        powerUpIndicator.SetActive(false);
         isPowerUp = false;
     }
 

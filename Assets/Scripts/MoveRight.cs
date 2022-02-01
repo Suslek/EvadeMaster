@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class MoveRight : MonoBehaviour
 {
-    private GameManager gameManager;
-    private float speed;
-    //    private Rigidbody objectRb;
+    private float speed = GameManager.speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        speed = gameManager.speed;
-        //        objectRb = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
         gameObject.transform.Translate(Vector3.right * speed * Time.deltaTime);
-//        objectRb.AddForce(Vector3.right * speed);
     }
 }

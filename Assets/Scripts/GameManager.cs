@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] enemies;
     public GameObject powerup;
-    public float speed;
+    public static float speed;
     public GameObject gameOverScreen;
     public GameObject titleScreen;
     public TextMeshProUGUI scoreText;

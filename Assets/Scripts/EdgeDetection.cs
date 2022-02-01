@@ -9,7 +9,7 @@ public class EdgeDetection : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.position.z < -Bound || transform.position.z > Bound || transform.position.x < -Bound || transform.position.x > Bound)
+        if (Mathf.Abs(transform.position.z) > Bound || Mathf.Abs(transform.position.x) > Bound)
         {
             Destroy(gameObject);
         }
