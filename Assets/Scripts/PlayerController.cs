@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ControllInput();
-
         BordersDetection();
     }
 

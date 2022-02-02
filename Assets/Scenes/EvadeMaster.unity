@@ -158,7 +158,6 @@ MonoBehaviour:
   - {fileID: 3855892592093720813, guid: 688d3b01af6f56945a10d66432fd247e, type: 3}
   - {fileID: 3281847520761123592, guid: 4f1148498c3b06b4a86df273e0a89ee7, type: 3}
   powerup: {fileID: 2428239792663554803, guid: 5321319ff566bea4f9b68a0f958d2ece, type: 3}
-  speed: 10
   gameOverScreen: {fileID: 1725312161}
   titleScreen: {fileID: 578794010}
   scoreText: {fileID: 452790033}
@@ -457,7 +456,7 @@ GameObject:
   - component: {fileID: 452790034}
   - component: {fileID: 452790033}
   m_Layer: 5
-  m_Name: Score Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
