@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemy;
     public GameObject powerup;
 
-    public static float speed;
+    public static float enemySpeed;
     public static float border = 17f;
 
     private float delayTime = 5;
@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
         waveCount = 0;
         _waveCount = waveCount + 5;
         delayTime = 5;
-        speed = 5f;
+        enemySpeed = 5f;
         StartCoroutine(SpawnDelay());
     }
 
@@ -53,11 +53,11 @@ public class SpawnManager : MonoBehaviour
             {
                 delayTime *= 0.95f;
             }
-            else if (speed < 20)
+            else if (enemySpeed < 20)
             {
-                speed *= 1.1f;
+                enemySpeed *= 1.1f;
             }
-            else if (speed >= 20 && delayTime >= 1.5f)
+            else if (enemySpeed >= 20 && delayTime >= 1.5f)
             {
                 delayTime *= 0.9f;
             }

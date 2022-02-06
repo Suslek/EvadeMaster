@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private Vector3 direction;
 
-    private float speed = SpawnManager.speed;
+    private float speed = SpawnManager.enemySpeed;
     private float border = SpawnManager.border;
 
     private bool gameActive = true;

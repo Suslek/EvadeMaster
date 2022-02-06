@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (gameActive) 
+        if (gameActive)
         {
             ControllInput();
             BordersDetection();
