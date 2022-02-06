@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,19 +9,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 10.0f;
     [SerializeField] private float border = 14.0f;
 
-    private GameManager gameManager;
     private bool isPowerUp;
-//    [SerializeField] private GameObject powerUpIndicator;
+    private bool gameActive;
+
+    public static UnityEvent OnGameEnd = new UnityEvent();
 
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        UIController.OnGameStart.AddListener(gameStart);
     }
-    // Update is called once per frame
+
     void Update()
     {
-        ControllInput();
-        BordersDetection();
+        if (gameActive) 
+        {
+            ControllInput();
+            BordersDetection();
+        }
+    }
+
+    void gameStart()
+    {
+        gameActive = true;
     }
 
     void ControllInput()
@@ -61,9 +71,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && !isPowerUp)
         {
-            gameManager.isGameActive = false;
             Destroy(gameObject);
-            gameManager.GameOver();
+            OnGameEnd.Invoke();
+            gameActive = false;
         }
 
         if (other.gameObject.CompareTag("PowerUp"))
