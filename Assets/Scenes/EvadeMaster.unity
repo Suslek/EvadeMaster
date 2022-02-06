@@ -152,11 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e02e1c43f20bc4f9b0c5d6372ea78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 1233445844891179077, guid: f50d46deab81d0541b2ce82adcd220b9, type: 3}
-  - {fileID: 7462305398145805669, guid: 8ba9b5df9bccf8c4e83db4222d5bea63, type: 3}
-  - {fileID: 3855892592093720813, guid: 688d3b01af6f56945a10d66432fd247e, type: 3}
-  - {fileID: 3281847520761123592, guid: 4f1148498c3b06b4a86df273e0a89ee7, type: 3}
   powerup: {fileID: 2428239792663554803, guid: 5321319ff566bea4f9b68a0f958d2ece, type: 3}
   gameOverScreen: {fileID: 1725312161}
   titleScreen: {fileID: 578794010}
@@ -1133,6 +1128,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1079962212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079962214}
+  - component: {fileID: 1079962213}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1079962213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079962212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ad9f42c25c6ce48abf8f1b9ae27ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 3281847520761123592, guid: 64c4d5166138bd441a2c58fa9db9385d, type: 3}
+  isGameActive: 0
+--- !u!4 &1079962214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079962212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375719022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,8 +1256,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 100006530}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1079962213}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
